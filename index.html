@@ -35,46 +35,30 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .button-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .cert-button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .action-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            color: white;
-        }
-
-        .download-button {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-        }
-
-        .dropbox-button {
-            background: linear-gradient(135deg, #0061ff, #60a5fa);
-        }
-
-        .action-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
         .profile-header {
             text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .profile-header .text-content {
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            object-fit: cover;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .profile-header h1 {
@@ -122,6 +106,44 @@
 
         .contact-info a:hover {
             transform: translateY(-2px);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .cert-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .download-button {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+
+        .dropbox-button {
+            background: linear-gradient(135deg, #0061ff, #60a5fa);
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .section {
             background: white;
@@ -287,16 +309,6 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-            .profile-photo {
-    		width: 100px;
-    		height: 100px;
-    		border-radius: 50%;
-    		margin: 0 auto 20px;
-    		border: 4px solid rgba(255, 255, 255, 0.3);
-    		box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    		object-fit: cover;
-    		display: block;
-	    }
         }
 
         @page {
@@ -309,6 +321,14 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
+            }
+            .profile-header {
+                flex-direction: column;
+            }
+            .profile-photo {
+                position: static;
+                margin-bottom: 20px;
+                transform: none;
             }
             .profile-header h1 {
                 font-size: 2em;
@@ -323,22 +343,24 @@
     <div class="container">
         <div class="profile-card">
             <div class="profile-header">
-		 <img src="me.png" alt="Osama Abdelrahman" class="profile-photo">
-                <h1>Osama Abdelrahman</h1>
-                <p class="title">IT Infrastructure and Systems Specialist</p>
-                <div class="contact-info">
-                    <div class="contact-row">
-                        <a href="#"><i class="fas fa-map-marker-alt"></i> Avenel NJ, USA</a>
-                        <a href="#"><i class="fas fa-map-marker-alt"></i> Bneid AlQar, Kuwait</a>
-                    </div>
-                    <div class="contact-row">
-                        <a href="tel:8482037242"><i class="fas fa-phone"></i> US: +1 (848) 203-7242</a>
-                        <a href="tel:+96599433246"><i class="fas fa-phone"></i> KW: +965 9943-3246</a>
-                    </div>
-                    <div class="contact-row email-row">
-                        <a href="mailto:pedroadam1034@gmail.com"><i class="fas fa-envelope"></i> pedroadam1034@gmail.com</a>
+                <div class="text-content">
+                    <h1>Osama Abdelrahman</h1>
+                    <p class="title">IT Infrastructure and Systems Specialist</p>
+                    <div class="contact-info">
+                        <div class="contact-row">
+                            <a href="#"><i class="fas fa-map-marker-alt"></i> Avenel NJ, USA</a>
+                            <a href="#"><i class="fas fa-map-marker-alt"></i> Bneid AlQar, Kuwait</a>
+                        </div>
+                        <div class="contact-row">
+                            <a href="tel:8482037242"><i class="fas fa-phone"></i> US: +1 (848) 203-7242</a>
+                            <a href="tel:+96599433246"><i class="fas fa-phone"></i> KW: +965 9943-3246</a>
+                        </div>
+                        <div class="contact-row email-row">
+                            <a href="mailto:pedroadam1034@gmail.com"><i class="fas fa-envelope"></i> pedroadam1034@gmail.com</a>
+                        </div>
                     </div>
                 </div>
+                <img src="me.png" alt="Osama Abdelrahman" class="profile-photo">
             </div>
         </div>
 
@@ -463,8 +485,6 @@
 
             <div class="experience-item">
                 <h3>IT Engineer</h3>
-                <p class="date">International Turn
-		                <h3>IT Engineer</h3>
                 <p class="date">International Turnkey Systems (ITS), Kuwait | April 2001 – February 2005</p>
                 <ul>
                     <li>Provided technical guidance and support to clients, focusing on Unix/Linux and Windows environments.</li>
