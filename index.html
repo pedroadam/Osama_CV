@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osama Abdelrahman - IT Infrastructure Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-header {
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .profile-header .text-content {
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            object-fit: cover;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .profile-header h1 {
+            font-size: 2.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-header .title {
+            font-size: 1.4em;
+            color: #fff;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .email-row {
+            margin-top: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+            font-size: 1.1em;
+        }
+
+        .contact-info a:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .cert-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .download-button {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+
+        .dropbox-button {
+            background: linear-gradient(135deg, #0061ff, #60a5fa);
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            color: #1a2980;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f2f5;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #1a2980;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #1a2980;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-card h3 {
+            color: #2d3436;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .certification-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #1a2980;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #1a2980;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .experience-item h3 {
+            color: #2d3436;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .experience-item .date {
+            color: #636e72;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        ul li:before {
+            content: "▹";
+            color: #1a2980;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        .project-item {
+            margin-bottom: 25px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #1a2980;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-item h3 {
+            color: #2d3436;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        @media print {
+            .button-container, .cert-button-container {
+                display: none;
+            }
+            body {
+                background: white;
+            }
+            .container {
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .profile-card {
+                background: #1a2980 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        @page {
+            margin: 1cm;
+            size: A4;
+        }
+
+        @media (max-width: 768px) {
+            .contact-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .profile-header {
+                flex-direction: column;
+            }
+            .profile-photo {
+                position: static;
+                margin-bottom: 20px;
+                transform: none;
+            }
+            .profile-header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+        .linkedin-link {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+ /* ✅ LinkedIn link styling */
+.linkedin-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.linkedin-link a:hover {
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <!-- LinkedIn link added here -->
+                <div class="linkedin-link">
+                    <a href="https://www.linkedin.com/in/osama-abdelrahman-48501664/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+           </div>
+                <div class="text-content">
+                    <h1>Osama Abdelrahman</h1>
+                    <p class="title">IT Infrastructure and Systems Specialist</p>
+                    <div class="contact-info">
+                        <div class="contact-row">
+                            <a href="#"><i class="fas fa-map-marker-alt"></i> Avenel NJ, USA</a>
+                            <a href="#"><i class="fas fa-map-marker-alt"></i> Bneid AlQar, Kuwait</a>
+                        </div>
+                        <div class="contact-row">
+                            <a href="tel:8482037242"><i class="fas fa-phone"></i> US: +1 (848) 203-7242</a>
+                            <a href="tel:+96599433246"><i class="fas fa-phone"></i> KW: +965 9943-3246</a>
+                        </div>
+                        <div class="contact-row email-row">
+                            <a href="mailto:Osamaism@hotmail"><i class="fas fa-envelope"></i> Osamaism@hotmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="me.png" alt="Osama Abdelrahman" class="profile-photo">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Objective</h2>
+            <p>Seeking technical/admin and (or) management positions in order to fully utilize my multidisciplinary knowledge, extensive technical skills, creative thinking capabilities and Hands on multiple-year real world experience in the fields of information technology</p>
+        </div>
+
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <ul>
+                <li>Over 15 years of experience in IT infrastructure, specializing in system design, deployment, and maintenance.</li>
+                <li>Proven expertise in advanced system engineering and leadership, managing complex IT systems and delivering innovative solutions.</li>
+                <li>Skilled in engineered systems, including Oracle M8 Supercluster and Oracle Exadata, as well as virtualization (VMware, Oracle VM), disaster recovery, and system optimization.</li>
+                <li>Strong ability to collaborate with cross-functional teams, ensuring robust infrastructure solutions and seamless IT operations.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Engineered Systems</h3>
+                    <ul>
+                        <li>Oracle M8 Supercluster</li>
+                        <li>Oracle Exadata</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Cluster Solutions</h3>
+                    <ul>
+                        <li>VERITAS Geo-Cluster</li>
+                        <li>Sun Geo-Cluster</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Operating Systems</h3>
+                    <ul>
+                        <li>Oracle Solaris (10/11)</li>
+                        <li>Linux (Red Hat Enterprise Linux, Ubuntu, Oracle Unbreakable Linux)</li>
+                        <li>Microsoft Windows Server</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Virtualization</h3>
+                    <ul>
+                        <li>VMware</li>
+                        <li>Oracle LDOMs</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Other Skills</h3>
+                    <ul>
+                        <li>Networking</li>
+                        <li>System Engineering</li>
+                        <li>Leadership</li>
+                        <li>Automation</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud Solutions</h3>
+                    <ul>
+                        <li>Oracle Cloud Infrastructure (OCI)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <div class="certification-grid">
+                <div class="certification-item">Oracle Solaris Certified System Administrator (SCSA)</div>
+                <div class="certification-item">Oracle Solaris Certified Network Administrator (SCNA)</div>
+                <div class="certification-item">Oracle Solaris Certified Security Administrator (SCSECA)</div>
+                <div class="certification-item">Red Hat Certified System Administrator (RHCSA)</div>
+                <div class="certification-item">Red Hat Certified Engineer (RHCE)</div>
+                <div class="certification-item">Cisco Certified Network Associate (CCNA)</div>
+                <div class="certification-item">CompTIA Network+</div>
+                <div class="certification-item">CompTIA A+</div>
+                <div class="certification-item">Microsoft Certified Systems Engineer (MCSE)</div>
+            </div>
+            <div class="cert-button-container">
+                <a href="https://www.dropbox.com/scl/fo/ld0m0b5zz3b81ilok6dhb/AN36YaJf0ngqdJ8qqXCiVe8?rlkey=0jotb04mulyjioipm39icj1x7&e=1&dl=0" 
+                   target="_blank" 
+                   class="action-button dropbox-button">
+                    <i class="fab fa-dropbox"></i>
+                    View Certificates
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>IT Infrastructure Specialist</h3>
+                <p class="date">International Turnkey Systems (ITS), Kuwait | April 2013 – September 2024</p>
+                <ul>
+                    <li>Delivered advanced system engineering solutions across various sectors, including banking and telecommunications.</li>
+                    <li>Provided technical leadership in deploying and maintaining Linux servers, storage systems, and Oracle Solaris environments.</li>
+                    <li>Led virtualization projects using VMware and Oracle technologies to optimize IT performance and reduce costs.</li>
+                    <li>Deployed and optimized engineered systems, including Oracle M8 Supercluster and Oracle Exadata.</li>
+                    <li>Supported disaster recovery planning and execution, ensuring minimal downtime during critical incidents.</li>
+                    <li>Collaborated with stakeholders to design and implement tailored IT solutions.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Unix/Windows Team Leader</h3>
+                <p class="date">International Turnkey Systems (ITS), Kuwait | April 2007 – April 2013</p>
+                <ul>
+                    <li>Led a team of Unix and Windows support engineers to deliver infrastructure solutions for enterprise clients.</li>
+                    <li>Ensured optimal system performance by overseeing the deployment, configuration, and maintenance of Unix and Windows servers.</li>
+                    <li>Managed team workloads, prioritized tasks, and provided technical mentorship to junior team members.</li>
+                    <li>Directed server migrations and upgrades, ensuring seamless transitions with minimal downtime.</li>
+                    <li>Collaborated with cross-functional teams to implement disaster recovery plans and high-availability solutions.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Senior IT Engineer</h3>
+                <p class="date">International Turnkey Systems (ITS), Kuwait | February 2005 – April 2007</p>
+                <ul>
+                    <li>Specialized in Unix/Linux and Windows systems, ensuring optimal performance and security.</li>
+                    <li>Delivered expert technical consulting services to clients in the banking, telecommunications, and oil sectors.</li>
+                    <li>Worked closely with clients to understand their needs and provide tailored solutions.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>IT Engineer</h3>
+                <p class="date">International Turnkey Systems (ITS), Kuwait | April 2001 – February 2005</p>
+                <ul>
+                    <li>Provided technical guidance and support to clients, focusing on Unix/Linux and Windows environments.</li>
+                    <li>Conducted training sessions for client teams to enhance their technical capabilities.</li>
+                    <li>Worked on the design and implementation of IT infrastructure projects.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Major Projects</h2>
+            <div class="project-item">
+                <h3>Oracle M8 Supercluster Deployment</h3>
+                <p>Designed and implemented this high-performance engineered system for Kuwait Finance House (KFH), significantly enhancing IT efficiency, security, and scalability.</p>
+            </div>
+            <div class="project-item">
+                <h3>Oracle Exadata Implementation</h3>
+                <p>Delivered end-to-end setup and optimization of Exadata systems for Zain Iraq and Kuwait Finance House (KFH), enabling exceptional database performance and reliability.</p>
+            </div>
+            <div class="project-item">
+                <h3>VMware Virtualization Setup</h3>
+                <p>Spearheaded virtualized infrastructure for Ministry of Kuwait Municipality and Kuwait Finance House (KFH), reducing hardware costs and increasing scalability.</p>
+            </div>
+            <div class="project-item">
+                <h3>Sun Geo-Cluster Configuration</h3>
+                <p>Established a robust and highly available cluster system for KNPC, ensuring 99.9% system uptime and enhanced disaster recovery capabilities.</p>
+            </div>
+            <div class="project-item">
+                <h3>VERITAS Geo-Cluster Configuration</h3>
+                <p>Designed and implemented VERITAS-based Geo-Cluster solutions for Zain Iraq, ensuring high availability and fault tolerance for critical IT operations.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <h3>B.Sc. in Information and Communications Technologies</h3>
+                <p class="date">The Open University (Validated by Arab Open University – Kuwait) – Graduated June 2007</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Languages</h2>
+            <ul>
+                <li>Fluent in Arabic and English</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>References</h2>
+            <p>Available upon request</p>
+        </div>
+
+        <div class="button-container">
+            <a href="#" onclick="window.print(); return false;" class="action-button download-button">
+                <i class="fas fa-download"></i>
+                Download CV as PDF
+            </a>
+        </div>
+    </div>
+</body>
+</html>
